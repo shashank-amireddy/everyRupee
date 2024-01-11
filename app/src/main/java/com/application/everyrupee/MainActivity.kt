@@ -1,5 +1,6 @@
 package com.application.everyrupee
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -22,7 +23,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android1112")
+                    Greeting("Android")
                 }
             }
         }
@@ -37,10 +38,12 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun GreetingPreview() {
     EveryRupeeTheme {
+
         Greeting("Android")
-    }
+        }
+
 }
