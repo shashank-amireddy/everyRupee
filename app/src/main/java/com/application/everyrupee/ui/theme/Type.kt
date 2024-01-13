@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.sp
 // Set of Material typography styles to start with
 val Typography = Typography(
     //body1
-    bodyLarge = TextStyle(
+    bodyMedium = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontSize = 17.sp,
@@ -17,13 +17,20 @@ val Typography = Typography(
         letterSpacing = 0.5.sp
     ),
     //body2
-    bodyMedium = TextStyle(
+    bodySmall = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.SemiBold,
         fontSize = 16.sp,
         lineHeight = 21.sp,
         letterSpacing = 0.5.sp
     ) ,
+    headlineMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 17.sp,
+        lineHeight = 22.sp,
+        letterSpacing = 0.5.sp
+    ),
     //h1
     titleLarge = TextStyle(
         fontFamily = FontFamily.Default,
@@ -49,7 +56,7 @@ val Typography = Typography(
         letterSpacing = 0.5.sp
     ),
     //caption
-    labelSmall = TextStyle(
+    labelMedium = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Medium,
         fontSize = 13.sp,
