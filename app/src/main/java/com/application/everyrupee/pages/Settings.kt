@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.application.everyrupee.components.TableRow
 import com.application.everyrupee.ui.theme.BackgroundElevated
 import com.application.everyrupee.ui.theme.Shapes
 import com.application.everyrupee.ui.theme.TopAppBarBackground
@@ -34,9 +35,13 @@ fun Settings(navController: NavController) {
         },
         content = { innerpadding ->
             Column (modifier = Modifier.padding(innerpadding)){
-                Column (modifier = Modifier.padding(16.dp).clip(RoundedCornerShape(Shapes.medium)).background(BackgroundElevated).fillMaxWidth()) {
-                    Text("Categories")
-                    Text("Erase all data")
+                Column (modifier = Modifier
+                    .padding(16.dp)
+                    .clip(RoundedCornerShape(6.dp))
+                    .background(BackgroundElevated)
+                    .fillMaxWidth()) {
+                    TableRow("Categories", hasArrow = true)
+                    TableRow("Erase all data", isDestructive = true)
                 }
             }
 
