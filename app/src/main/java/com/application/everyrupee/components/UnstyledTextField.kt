@@ -60,11 +60,7 @@ fun UnstyledTextField (value: String,
 )
 
     {
-        // If color is not provided via the text style, use content color as a default
-//        val textColor = textStyle.color.takeOrElse {
-//            colors.textColor(enabled).value
-//        }
-        //val mergedTextStyle = textStyle.merge(TextStyle(color = textColor))
+
         val textColor = TextPrimary
         val mergedTextStyle =
             textStyle.merge(TextStyle(color = textColor))
