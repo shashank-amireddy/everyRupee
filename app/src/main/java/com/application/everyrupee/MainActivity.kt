@@ -24,6 +24,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.application.everyrupee.pages.Add
 import com.application.everyrupee.pages.Expenses
 import com.application.everyrupee.pages.Settings
 import com.application.everyrupee.ui.theme.EveryRupeeTheme
@@ -122,7 +123,7 @@ class MainActivity : ComponentActivity() {
                                         .fillMaxSize()
                                         .padding(innerPadding),
                                 ){
-                                    Greeting(name = "Add")
+                                    Add(navController)
                                 }
 
                             }

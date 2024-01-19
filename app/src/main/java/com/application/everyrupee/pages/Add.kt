@@ -1,38 +1,38 @@
 package com.application.everyrupee.pages
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MediumTopAppBar
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarColors
+import androidx.compose.material3.TextField
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.application.everyrupee.components.TableRow
+import com.application.everyrupee.components.UnstyledTextField
 import com.application.everyrupee.ui.theme.BackgroundElevated
+import com.application.everyrupee.ui.theme.Divider
 import com.application.everyrupee.ui.theme.Shapes
 import com.application.everyrupee.ui.theme.TopAppBarBackground
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Settings(navController: NavController) {
+
+fun Add(navController: NavController){
     Scaffold (
         topBar = {
-            MediumTopAppBar(title = { Text("Settings")}, colors = TopAppBarDefaults.mediumTopAppBarColors(
+            MediumTopAppBar(title = { Text("Add") }, colors = TopAppBarDefaults.mediumTopAppBarColors(
                 containerColor = TopAppBarBackground
             ) )
         },
@@ -43,11 +43,22 @@ fun Settings(navController: NavController) {
                     .clip(Shapes.large)
                     .background(BackgroundElevated)
                     .fillMaxWidth()) {
-                    TableRow(label ="Categories", hasArrow = true, modifier = Modifier.clickable {
-                        navController.navigate("settings/categories")
-                    })
-                    Divider(modifier = Modifier.padding(start = 16.dp),thickness =1.dp, color = com.application.everyrupee.ui.theme.Divider)
-                    TableRow(label ="Erase all data", isDestructive = true)
+                    TableRow(label ="Amount"){
+                        UnstyledTextField(value = "Amount", onValueChange = {},
+                            modifier = Modifier.fillMaxWidth(),
+                            textStyle = TextStyle(
+                                textAlign = TextAlign.End
+                            )
+                        )
+                    }
+                    Divider(modifier = Modifier.padding(start = 16.dp),thickness =1.dp, color = Divider)
+                    TableRow(label ="Recurrence")
+                    Divider(modifier = Modifier.padding(start = 16.dp),thickness =1.dp, color = Divider)
+                    TableRow(label ="Date")
+                    Divider(modifier = Modifier.padding(start = 16.dp),thickness =1.dp, color = Divider)
+                    TableRow(label ="Note")
+                    Divider(modifier = Modifier.padding(start = 16.dp),thickness =1.dp, color = Divider)
+                    TableRow(label ="Category")
                 }
             }
 
