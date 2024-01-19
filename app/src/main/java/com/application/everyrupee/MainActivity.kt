@@ -27,6 +27,7 @@ import androidx.navigation.compose.rememberNavController
 import com.application.everyrupee.pages.Expenses
 import com.application.everyrupee.pages.Settings
 import com.application.everyrupee.ui.theme.EveryRupeeTheme
+import com.application.everyrupee.ui.theme.TopAppBarBackground
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +38,7 @@ class MainActivity : ComponentActivity() {
                 val backStackEntry = navController.currentBackStackEntryAsState()
                 Scaffold (
                     bottomBar = {
-                         NavigationBar {
+                         NavigationBar(containerColor = TopAppBarBackground) {
                              NavigationBarItem(
                                  selected = backStackEntry.value?.destination?.route == "expenses",
                                  onClick = { navController.navigate("expenses") },
@@ -80,7 +81,7 @@ class MainActivity : ComponentActivity() {
                                  }
                              )
                              NavigationBarItem(
-                                 selected = backStackEntry.value?.destination?.route == "settings",
+                                 selected = backStackEntry.value?.destination?.route?.startsWith("settings") ?: false,
                                  onClick = { navController.navigate("settings") },
                                  icon = {
                                      Icon(
