@@ -2,10 +2,12 @@ package com.application.everyrupee
 
 import android.content.res.Configuration
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -31,6 +33,7 @@ import com.application.everyrupee.ui.theme.EveryRupeeTheme
 import com.application.everyrupee.ui.theme.TopAppBarBackground
 
 class MainActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -70,7 +73,7 @@ class MainActivity : ComponentActivity() {
                             )
                              NavigationBarItem(
                                  selected = backStackEntry.value?.destination?.route == "add",
-                                 onClick = { navController.navigate("add") },
+                                 onClick = { navController.navigate( "add") },
                                  icon = {
                                      Icon(
                                          painterResource(id = R.drawable.add),
