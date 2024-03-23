@@ -62,8 +62,7 @@ fun UnstyledTextField (value: String,
     {
 
         val textColor = TextPrimary
-        val mergedTextStyle =
-            textStyle.merge(TextStyle(color = textColor))
+        val mergedTextStyle = textStyle.merge(TextStyle(color = textColor))
             BasicTextField(
                 value = value,
 //                modifier = modifier
